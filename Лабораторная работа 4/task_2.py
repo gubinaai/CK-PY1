@@ -10,6 +10,13 @@ def get_count_char(str_):  # функция для создания my_dict
                 my_dict[letter] = 1
     return my_dict
 
+def get_percent_char(dict_):  # фунция для создания словаря с процентами
+    new_dict = {}
+    summary = sum(dict_.values())
+    for key, value in dict_.items():
+        new_dict[key] = round((value / summary) * 100, 2)
+    return new_dict
+
 main_str = """
     Данное предложение будет разбиваться на отдельные слова. 
     В качестве разделителя для встроенного метода split будет выбран символ пробела. На выходе мы получим список отдельных слов. 
@@ -17,15 +24,4 @@ main_str = """
 """
 
 print(get_count_char(main_str))
-
-def get_percent_char(dict_):  # фунция для создания словаря с процентами
-    new_dict = {}
-    summary = sum(dict_.values())
-    for key, value in dict_.items():
-        new_dict[key] = round((value / summary) * 100, 2)
-    return new_dict
-new_dict = get_percent_char(my_dict)  # новый словарь – буква : процент
-print(new_dict)
-
-summary_2 = sum(new_dict.values())  # для проверки суммы процентов (100)
-print(summary_2)
+print(get_percent_char(my_dict))
