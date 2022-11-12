@@ -2,7 +2,7 @@ import random
 
 def get_unique_list_numbers() -> list[int]:
     list_unique_numbers = []
-    while len(list_unique_numbers) != 15:  # пока список не будет равен 15
+    while len(list_unique_numbers) != 15:
         number = random.randrange(-10, 10)
         if number not in list_unique_numbers:
             list_unique_numbers.append(number)
